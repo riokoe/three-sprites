@@ -1,0 +1,46 @@
+{
+  "name": "three-sprites",
+  "version": "0.0.1",
+  "description": "A library for THREE.JS to render and animate spritesheet-based tilemaps and sprites.",
+  "homepage": "https://github.com/riokoe/three-sprites",
+  "repository": "github:riokoe/three-sprites",
+  "license": "MIT",
+  "author": "riokoe",
+  "funding": "https://ko-fi.com/riokoe",
+  "keywords": [ "three", "three.js", "tilemap", "tileset", "spritesheet", "animate", "tile", "tiling", "2d", "sprite", "3d", "browser", "javascript", "typescript", "webgl", "shader" ],
+  "main": "./dist/esm/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc -p ./build/tsconfig.esm.json && npx tsc -p ./build/tsconfig.cjs.json && npx tsc -p ./build/tsconfig.types.json && npx rollup --config ./build/rollup.config.js",
+    "docs": "npx typedoc src/index.ts --gitRevision main --highlightLanguages typescript --plugin typedoc-plugin-markdown --entryFileName index.md --indexFormat table --parametersFormat table --classPropertiesFormat table --enumMembersFormat table --typeDeclarationFormat table --propertyMembersFormat table --interfacePropertiesFormat table --mergeReadme false --hideBreadcrumbs true --excludeExternals && rm -rf docs/_media && mv docs/globals.md docs/index.md",
+    "lint": "npx eslint"
+  },
+  "peerDependencies": {
+    "three": "^0.169.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.1.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/three": "^0.169.0",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "eslint": "^8.57.0",
+    "rollup": "^4.24.0",
+    "typedoc": "^0.26.8",
+    "typedoc-plugin-markdown": "^4.2.9",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^8.8.0"
+  }
+}

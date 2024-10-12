@@ -1,0 +1,58 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "requestAnimationFrame": true,
+    "setInterval": true,
+    "game": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "prefer-const": 2,
+    "no-unused-vars": 1,
+    "no-extra-boolean-cast": 0
+  },
+  "ignorePatterns": [
+    "dist/*"
+  ],
+  "overrides": [
+    {
+      "files": "src/**/*.ts",
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/strict-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": 2,
+        "prefer-const": 2,
+        "@typescript-eslint/consistent-generic-constructors": 0,
+        "@typescript-eslint/no-inferrable-types": [
+          2,
+          {
+            "ignoreParameters": true,
+            "ignoreProperties": true
+          }
+        ]
+      }
+    }
+  ]
+}
