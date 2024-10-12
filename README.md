@@ -11,7 +11,7 @@ A library for [THREE.js](https://github.com/mrdoob/three.js) to render, animate 
 
 # Demos
 
-[![Demo](https://github.com/riokoe/three-sprites/raw/main/demos/shared/demo.gif)]()
+[![Demo](https://github.com/riokoe/three-sprites/raw/main/demos/shared/demo.gif)](https://riokoe.github.io/three-sprites/demos/tilemap/index.html)
 
  - [Tilemap demo](https://riokoe.github.io/three-sprites/demos/tilemap/index.html) ([source code](https://github.com/riokoe/three-sprites/tree/main/demos/tilemap/tilemap.js))
  - [Usage demo](https://riokoe.github.io/three-sprites/demos/general/index.html) ([source code](https://github.com/riokoe/three-sprites/tree/main/demos/general/general.js))
