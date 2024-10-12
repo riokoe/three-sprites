@@ -45,9 +45,9 @@ node\_modules/@types/three/src/materials/Material.d.ts:237
 
 | Property | Modifier | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| `map?` | `public` | `null` \| `Texture` | The texture for the sprite. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | src/SpriteMaterial.ts:101 |
-| `tiling?` | `public` | `Required`\<[`ISpriteTilingOptions`](../interfaces/ISpriteTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | src/SpriteMaterial.ts:130 |
-| `uniforms?` | `public` | [`ISpriteUniforms`](../interfaces/ISpriteUniforms.md) | Uniforms of the shader. May be set before shader compilation. Can be used to manipulate tile/tileset size/coordinates instead of calling `tile(options)`. Useful to bypass px -> UV calculations of `tile()` in case tiling data is already formatted as UVs: `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { tileSize: { value: new THREE.Vector2(0.5, 0.5) }, tileCoord: { value: new THREE.Vector2(0, 0.5) }, tileRepeat: { value: new THREE.Vector2(1, 1) }, } let n = 0; while (await new Promise(res => setTimeout(res, 100))) { mat.uniforms.tileCoord.value.set(0.5 * n, 0.5); n = Number(!n); }` | src/SpriteMaterial.ts:124 |
+| `map?` | `public` | `null` \| `Texture` | The texture for the sprite. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | [src/SpriteMaterial.ts:101](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L101) |
+| `tiling?` | `public` | `Required`\<[`ISpriteTilingOptions`](../interfaces/ISpriteTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | [src/SpriteMaterial.ts:130](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L130) |
+| `uniforms?` | `public` | [`ISpriteUniforms`](../interfaces/ISpriteUniforms.md) | Uniforms of the shader. May be set before shader compilation. Can be used to manipulate tile/tileset size/coordinates instead of calling `tile(options)`. Useful to bypass px -> UV calculations of `tile()` in case tiling data is already formatted as UVs: `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { tileSize: { value: new THREE.Vector2(0.5, 0.5) }, tileCoord: { value: new THREE.Vector2(0, 0.5) }, tileRepeat: { value: new THREE.Vector2(1, 1) }, } let n = 0; while (await new Promise(res => setTimeout(res, 100))) { mat.uniforms.tileCoord.value.set(0.5 * n, 0.5); n = Number(!n); }` | [src/SpriteMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L124) |
 
 ## Methods
 
@@ -80,7 +80,7 @@ customProgramCacheKey() {
 
 #### Defined in
 
-src/SpriteMaterial.ts:210
+[src/SpriteMaterial.ts:210](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L210)
 
 ***
 
@@ -103,7 +103,7 @@ shader program.
 
 #### Defined in
 
-src/SpriteMaterial.ts:247
+[src/SpriteMaterial.ts:247](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L247)
 
 ***
 
@@ -126,7 +126,7 @@ shader is (re-)compiled.
 
 #### Defined in
 
-src/SpriteMaterial.ts:311
+[src/SpriteMaterial.ts:311](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L311)
 
 ***
 
@@ -166,7 +166,7 @@ onBeforeCompile(shader) {
 
 #### Defined in
 
-src/SpriteMaterial.ts:235
+[src/SpriteMaterial.ts:235](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L235)
 
 ***
 
@@ -190,7 +190,7 @@ with Required<ISpriteTilingOptions<THREE.Vector2>> on
 
 #### Defined in
 
-src/SpriteMaterial.ts:273
+[src/SpriteMaterial.ts:273](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L273)
 
 ***
 
@@ -225,7 +225,7 @@ myScene.add(sprite);
 
 #### Defined in
 
-src/SpriteMaterial.ts:151
+[src/SpriteMaterial.ts:151](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L151)
 
 ***
 
@@ -261,7 +261,7 @@ during runtime or you'll risk leaking memory.
 
 #### Defined in
 
-src/SpriteMaterial.ts:338
+[src/SpriteMaterial.ts:338](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L338)
 
 ***
 
@@ -290,4 +290,4 @@ Static method to extend instanciated materials by
 
 #### Defined in
 
-src/SpriteMaterial.ts:354
+[src/SpriteMaterial.ts:354](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L354)

@@ -38,7 +38,7 @@ materiial.tile({
 
 #### Defined in
 
-src/TilemapMaterial.ts:357
+[src/TilemapMaterial.ts:357](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L357)
 
 ***
 
@@ -62,16 +62,16 @@ src/TilemapMaterial.ts:357
 
 #### Defined in
 
-src/index.ts:216
+[src/index.ts:216](https://github.com/riokoe/three-sprites/blob/main/src/index.ts#L216)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| `map?` | `public` | `null` \| `Texture` | The texture for the Tilemap. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).map` | src/TilemapMaterial.ts:124 |
+| `map?` | `public` | `null` \| `Texture` | The texture for the Tilemap. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).map` | [src/TilemapMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L124) |
 | `prototype` | `public` | `MeshToonMaterial` | - | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).prototype` |  |
-| `tiling?` | `public` | `Required`\<[`ITilemapTilingOptions`](../interfaces/ITilemapTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).tiling` | src/TilemapMaterial.ts:146 |
-| `uniforms?` | `public` | [`ITilemapUniforms`](../interfaces/ITilemapUniforms.md) | Uniforms of the shader. May be set before shader compilation. `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { myCustomUniform: { value: 10 }, } mat.tile({ // ... });` | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).uniforms` | src/TilemapMaterial.ts:140 |
+| `tiling?` | `public` | `Required`\<[`ITilemapTilingOptions`](../interfaces/ITilemapTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).tiling` | [src/TilemapMaterial.ts:146](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L146) |
+| `uniforms?` | `public` | [`ITilemapUniforms`](../interfaces/ITilemapUniforms.md) | Uniforms of the shader. May be set before shader compilation. `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { myCustomUniform: { value: 10 }, } mat.tile({ // ... });` | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).uniforms` | [src/TilemapMaterial.ts:140](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L140) |
 
 ## Methods
 
@@ -104,7 +104,7 @@ customProgramCacheKey() {
 
 #### Defined in
 
-src/TilemapMaterial.ts:222
+[src/TilemapMaterial.ts:222](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L222)
 
 ***
 
@@ -131,7 +131,7 @@ shader program.
 
 #### Defined in
 
-src/TilemapMaterial.ts:259
+[src/TilemapMaterial.ts:259](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L259)
 
 ***
 
@@ -158,7 +158,7 @@ shader is (re-)compiled.
 
 #### Defined in
 
-src/TilemapMaterial.ts:315
+[src/TilemapMaterial.ts:315](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L315)
 
 ***
 
@@ -198,7 +198,7 @@ onBeforeCompile(shader) {
 
 #### Defined in
 
-src/TilemapMaterial.ts:247
+[src/TilemapMaterial.ts:247](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L247)
 
 ***
 
@@ -226,7 +226,7 @@ with Required<ITilemapTilingOptions<THREE.Vector2>> on
 
 #### Defined in
 
-src/TilemapMaterial.ts:285
+[src/TilemapMaterial.ts:285](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L285)
 
 ***
 
@@ -265,4 +265,4 @@ myScene.add(tilemap);
 
 #### Defined in
 
-src/TilemapMaterial.ts:167
+[src/TilemapMaterial.ts:167](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L167)
