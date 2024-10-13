@@ -335,13 +335,16 @@ export abstract class SpriteMaterial extends THREE.Material {
    * @param {T} ctor The class to extend.
    * @returns {new () => T & TiledMaterial}
    */
-  public static extendClass<T extends new () => THREE.Material>(ctor: T): new () => SpriteMaterial & T {
-    const newClass = class extends (ctor as new () => THREE.Material) { };
+  public static extendClass<
+    TCtor extends new (args: TParam) => THREE.Material,
+    TParam extends THREE.MaterialParameters
+  >(ctor: TCtor): new (args: TParam) => TCtor & SpriteMaterial {
+    const newClass = class extends (ctor as new (args: TParam) => THREE.Material) { };
     for (const prop of Object.getOwnPropertyNames(SpriteMaterial.prototype)) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       Object.defineProperty(newClass.prototype, prop, Object.getOwnPropertyDescriptor(SpriteMaterial.prototype, prop as keyof SpriteMaterial) ?? Object.create(null));
     }
-    return newClass as new () => SpriteMaterial & T;
+    return newClass as unknown as new (args: TParam) => TCtor & SpriteMaterial;
   }
 
   /**

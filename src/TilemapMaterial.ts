@@ -354,13 +354,16 @@ export abstract class TilemapMaterial extends THREE.Material {
    * @param {T} ctor The class to extend.
    * @returns {new () => T & TilemapMaterial}
    */
-  public static extendClass<T extends new () => THREE.Material>(ctor: T): new () => TilemapMaterial & T {
-    const newClass = class extends (ctor as new () => THREE.Material) { };
+  public static extendClass<
+    TCtor extends new (args: TParam) => THREE.Material,
+    TParam extends THREE.MaterialParameters
+  >(ctor: TCtor): new (args: TParam) => TCtor & TilemapMaterial {
+    const newClass = class extends (ctor as new (args: TParam) => THREE.Material) { };
     for (const prop of Object.getOwnPropertyNames(TilemapMaterial.prototype)) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       Object.defineProperty(newClass.prototype, prop, Object.getOwnPropertyDescriptor(TilemapMaterial.prototype, prop as keyof TilemapMaterial) ?? Object.create(null));
     }
-    return newClass as new () => TilemapMaterial & T;
+    return newClass as unknown as new (args: TParam) => TCtor & TilemapMaterial;
   }
 
   /**

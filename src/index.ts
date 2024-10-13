@@ -26,7 +26,10 @@ export {
  * });
  * ```
  */
-export class SpriteMeshBasicMaterial extends SpriteMaterial.extendClass(THREE.MeshBasicMaterial) { }
+export class SpriteMeshBasicMaterial extends SpriteMaterial.extendClass<
+  typeof THREE.MeshBasicMaterial,
+  THREE.MeshBasicMaterialParameters
+>(THREE.MeshBasicMaterial) { }
 
 /**
  * THREE.MeshLambertMaterial extending SpriteMaterial.
@@ -43,7 +46,10 @@ export class SpriteMeshBasicMaterial extends SpriteMaterial.extendClass(THREE.Me
  * });
  * ```
  */
-export class SpriteMeshLambertMaterial extends SpriteMaterial.extendClass(THREE.MeshLambertMaterial) { }
+export class SpriteMeshLambertMaterial extends SpriteMaterial.extendClass<
+  typeof THREE.MeshLambertMaterial,
+  THREE.MeshLambertMaterialParameters
+>(THREE.MeshLambertMaterial) { }
 
 /**
  * THREE.MeshStandardMaterial extending SpriteMaterial.
@@ -60,7 +66,10 @@ export class SpriteMeshLambertMaterial extends SpriteMaterial.extendClass(THREE.
  * });
  * ```
  */
-export class SpriteMeshStandardMaterial extends SpriteMaterial.extendClass(THREE.MeshStandardMaterial) { }
+export class SpriteMeshStandardMaterial extends SpriteMaterial.extendClass<
+  typeof THREE.MeshStandardMaterial,
+  THREE.MeshStandardMaterialParameters
+>(THREE.MeshStandardMaterial) { }
 
 /**
  * THREE.MeshPhysicalMaterial extending SpriteMaterial.
@@ -77,7 +86,10 @@ export class SpriteMeshStandardMaterial extends SpriteMaterial.extendClass(THREE
  * });
  * ```
  */
-export class SpriteMeshPhysicalMaterial extends SpriteMaterial.extendClass(THREE.MeshPhysicalMaterial) { }
+export class SpriteMeshPhysicalMaterial extends SpriteMaterial.extendClass<
+  typeof THREE.MeshPhysicalMaterial,
+  THREE.MeshPhysicalMaterialParameters
+>(THREE.MeshPhysicalMaterial) { }
 
 /**
  * THREE.MeshPhongMaterial extending SpriteMaterial.
@@ -94,7 +106,10 @@ export class SpriteMeshPhysicalMaterial extends SpriteMaterial.extendClass(THREE
  * });
  * ```
  */
-export class SpriteMeshPhongMaterial extends SpriteMaterial.extendClass(THREE.MeshPhongMaterial) { }
+export class SpriteMeshPhongMaterial extends SpriteMaterial.extendClass<
+  typeof THREE.MeshPhongMaterial,
+  THREE.MeshPhongMaterialParameters
+>(THREE.MeshPhongMaterial) { }
 
 /**
  * THREE.MeshToonMaterial extending SpriteMaterial.
@@ -111,7 +126,10 @@ export class SpriteMeshPhongMaterial extends SpriteMaterial.extendClass(THREE.Me
  * });
  * ```
  */
-export class SpriteMeshToonMaterial extends SpriteMaterial.extendClass(THREE.MeshToonMaterial) { }
+export class SpriteMeshToonMaterial extends SpriteMaterial.extendClass<
+  typeof THREE.MeshToonMaterial,
+  THREE.MeshToonMaterialParameters
+>(THREE.MeshToonMaterial) { }
 
 /**
  * THREE.MeshBasicMaterial extending TilemapMaterial.
@@ -128,7 +146,10 @@ export class SpriteMeshToonMaterial extends SpriteMaterial.extendClass(THREE.Mes
  * });
  * ```
  */
-export class TilemapMeshBasicMaterial extends TilemapMaterial.extendClass(THREE.MeshBasicMaterial) { }
+export class TilemapMeshBasicMaterial extends TilemapMaterial.extendClass<
+  typeof THREE.MeshBasicMaterial,
+  THREE.MeshBasicMaterialParameters
+>(THREE.MeshBasicMaterial) { }
 
 /**
  * THREE.MeshLambertMaterial extending TilemapMaterial.
@@ -145,7 +166,10 @@ export class TilemapMeshBasicMaterial extends TilemapMaterial.extendClass(THREE.
  * });
  * ```
  */
-export class TilemapMeshLambertMaterial extends TilemapMaterial.extendClass(THREE.MeshLambertMaterial) { }
+export class TilemapMeshLambertMaterial extends TilemapMaterial.extendClass<
+  typeof THREE.MeshLambertMaterial,
+  THREE.MeshLambertMaterialParameters
+>(THREE.MeshLambertMaterial) { }
 
 /**
  * THREE.MeshStandardMaterial extending TilemapMaterial.
@@ -162,7 +186,10 @@ export class TilemapMeshLambertMaterial extends TilemapMaterial.extendClass(THRE
  * });
  * ```
  */
-export class TilemapMeshStandardMaterial extends TilemapMaterial.extendClass(THREE.MeshStandardMaterial) { }
+export class TilemapMeshStandardMaterial extends TilemapMaterial.extendClass<
+  typeof THREE.MeshStandardMaterial,
+  THREE.MeshStandardMaterialParameters
+>(THREE.MeshStandardMaterial) { }
 
 /**
  * THREE.MeshPhysicalMaterial extending TilemapMaterial.
@@ -179,7 +206,10 @@ export class TilemapMeshStandardMaterial extends TilemapMaterial.extendClass(THR
  * });
  * ```
  */
-export class TilemapMeshPhysicalMaterial extends TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial) { }
+export class TilemapMeshPhysicalMaterial extends TilemapMaterial.extendClass<
+  typeof THREE.MeshPhysicalMaterial,
+  THREE.MeshPhysicalMaterialParameters
+>(THREE.MeshPhysicalMaterial) { }
 
 /**
  * THREE.MeshPhongMaterial extending TilemapMaterial.
@@ -196,7 +226,10 @@ export class TilemapMeshPhysicalMaterial extends TilemapMaterial.extendClass(THR
  * });
  * ```
  */
-export class TilemapMeshPhongMaterial extends TilemapMaterial.extendClass(THREE.MeshPhongMaterial) { }
+export class TilemapMeshPhongMaterial extends TilemapMaterial.extendClass<
+  typeof THREE.MeshPhongMaterial,
+  THREE.MeshPhongMaterialParameters
+>(THREE.MeshPhongMaterial) { }
 
 /**
  * THREE.MeshToonMaterial extending TilemapMaterial.
@@ -213,4 +246,7 @@ export class TilemapMeshPhongMaterial extends TilemapMaterial.extendClass(THREE.
  * });
  * ```
  */
-export class TilemapMeshToonMaterial extends TilemapMaterial.extendClass(THREE.MeshToonMaterial) { }
+export class TilemapMeshToonMaterial extends TilemapMaterial.extendClass<
+  typeof THREE.MeshToonMaterial,
+  THREE.MeshToonMaterialParameters
+>(THREE.MeshToonMaterial) { }
