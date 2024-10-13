@@ -20,13 +20,19 @@ materiial.tile({
 
 ## Extends
 
-- [`SpriteMaterial`](SpriteMaterial.md)\<`this`\> & *typeof* `MeshLambertMaterial`
+- *typeof* `MeshLambertMaterial` & [`SpriteMaterial`](SpriteMaterial.md)\<`this`\>
 
 ## Constructors
 
 ### new SpriteMeshLambertMaterial()
 
-> **new SpriteMeshLambertMaterial**(): [`SpriteMeshLambertMaterial`](SpriteMeshLambertMaterial.md)
+> **new SpriteMeshLambertMaterial**(`args`): [`SpriteMeshLambertMaterial`](SpriteMeshLambertMaterial.md)
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `args` | `MeshLambertMaterialParameters` |
 
 #### Returns
 
@@ -34,11 +40,14 @@ materiial.tile({
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshLambertMaterial).constructor`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshLambertMaterial,
+  THREE.MeshLambertMaterialParameters
+>(THREE.MeshLambertMaterial).constructor`
 
 #### Defined in
 
-[src/SpriteMaterial.ts:338](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L338)
+[src/SpriteMaterial.ts:341](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L341)
 
 ***
 
@@ -58,20 +67,23 @@ materiial.tile({
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshLambertMaterial).constructor`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshLambertMaterial,
+  THREE.MeshLambertMaterialParameters
+>(THREE.MeshLambertMaterial).constructor`
 
 #### Defined in
 
-[src/index.ts:46](https://github.com/riokoe/three-sprites/blob/main/src/index.ts#L46)
+[src/index.ts:49](https://github.com/riokoe/three-sprites/blob/main/src/index.ts#L49)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| `map?` | `public` | `null` \| `Texture` | The texture for the sprite. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `SpriteMaterial.extendClass(THREE.MeshLambertMaterial).map` | [src/SpriteMaterial.ts:101](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L101) |
-| `prototype` | `public` | `MeshLambertMaterial` | - | `SpriteMaterial.extendClass(THREE.MeshLambertMaterial).prototype` |  |
-| `tiling?` | `public` | `Required`\<[`ISpriteTilingOptions`](../interfaces/ISpriteTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `SpriteMaterial.extendClass(THREE.MeshLambertMaterial).tiling` | [src/SpriteMaterial.ts:130](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L130) |
-| `uniforms?` | `public` | [`ISpriteUniforms`](../interfaces/ISpriteUniforms.md) | Uniforms of the shader. May be set before shader compilation. Can be used to manipulate tile/tileset size/coordinates instead of calling `tile(options)`. Useful to bypass px -> UV calculations of `tile()` in case tiling data is already formatted as UVs: `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { tileSize: { value: new THREE.Vector2(0.5, 0.5) }, tileCoord: { value: new THREE.Vector2(0, 0.5) }, tileRepeat: { value: new THREE.Vector2(1, 1) }, } let n = 0; while (await new Promise(res => setTimeout(res, 100))) { mat.uniforms.tileCoord.value.set(0.5 * n, 0.5); n = Number(!n); }` | `SpriteMaterial.extendClass(THREE.MeshLambertMaterial).uniforms` | [src/SpriteMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L124) |
+| `map?` | `public` | `null` \| `Texture` | The texture for the sprite. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `SpriteMaterial.extendClass< typeof THREE.MeshLambertMaterial, THREE.MeshLambertMaterialParameters >(THREE.MeshLambertMaterial).map` | [src/SpriteMaterial.ts:101](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L101) |
+| `prototype` | `public` | `MeshLambertMaterial` | - | `SpriteMaterial.extendClass< typeof THREE.MeshLambertMaterial, THREE.MeshLambertMaterialParameters >(THREE.MeshLambertMaterial).prototype` |  |
+| `tiling?` | `public` | `Required`\<[`ISpriteTilingOptions`](../interfaces/ISpriteTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `SpriteMaterial.extendClass< typeof THREE.MeshLambertMaterial, THREE.MeshLambertMaterialParameters >(THREE.MeshLambertMaterial).tiling` | [src/SpriteMaterial.ts:130](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L130) |
+| `uniforms?` | `public` | [`ISpriteUniforms`](../interfaces/ISpriteUniforms.md) | Uniforms of the shader. May be set before shader compilation. Can be used to manipulate tile/tileset size/coordinates instead of calling `tile(options)`. Useful to bypass px -> UV calculations of `tile()` in case tiling data is already formatted as UVs: `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { tileSize: { value: new THREE.Vector2(0.5, 0.5) }, tileCoord: { value: new THREE.Vector2(0, 0.5) }, tileRepeat: { value: new THREE.Vector2(1, 1) }, } let n = 0; while (await new Promise(res => setTimeout(res, 100))) { mat.uniforms.tileCoord.value.set(0.5 * n, 0.5); n = Number(!n); }` | `SpriteMaterial.extendClass< typeof THREE.MeshLambertMaterial, THREE.MeshLambertMaterialParameters >(THREE.MeshLambertMaterial).uniforms` | [src/SpriteMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L124) |
 
 ## Methods
 
@@ -100,7 +112,10 @@ customProgramCacheKey() {
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshLambertMaterial).customProgramCacheKey`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshLambertMaterial,
+  THREE.MeshLambertMaterialParameters
+>(THREE.MeshLambertMaterial).customProgramCacheKey`
 
 #### Defined in
 
@@ -127,7 +142,10 @@ shader program.
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshLambertMaterial).injectShaderFragments`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshLambertMaterial,
+  THREE.MeshLambertMaterialParameters
+>(THREE.MeshLambertMaterial).injectShaderFragments`
 
 #### Defined in
 
@@ -154,7 +172,10 @@ shader is (re-)compiled.
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshLambertMaterial).mergeUniforms`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshLambertMaterial,
+  THREE.MeshLambertMaterialParameters
+>(THREE.MeshLambertMaterial).mergeUniforms`
 
 #### Defined in
 
@@ -194,7 +215,10 @@ onBeforeCompile(shader) {
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshLambertMaterial).onBeforeCompile`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshLambertMaterial,
+  THREE.MeshLambertMaterialParameters
+>(THREE.MeshLambertMaterial).onBeforeCompile`
 
 #### Defined in
 
@@ -222,7 +246,10 @@ with Required<ISpriteTilingOptions<THREE.Vector2>> on
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshLambertMaterial).setTilingOptions`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshLambertMaterial,
+  THREE.MeshLambertMaterialParameters
+>(THREE.MeshLambertMaterial).setTilingOptions`
 
 #### Defined in
 
@@ -261,7 +288,10 @@ myScene.add(sprite);
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshLambertMaterial).tile`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshLambertMaterial,
+  THREE.MeshLambertMaterialParameters
+>(THREE.MeshLambertMaterial).tile`
 
 #### Defined in
 

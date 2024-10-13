@@ -231,7 +231,7 @@ myScene.add(tilemap);
 
 ### extendClass()
 
-> `static` **extendClass**\<`T`\>(`ctor`): () => [`TilemapMaterial`](TilemapMaterial.md) & `T`
+> `static` **extendClass**\<`TCtor`, `TParam`\>(`ctor`): (`args`) => `TCtor` & [`TilemapMaterial`](TilemapMaterial.md)
 
 Static method to create mixins of `THREE.Material`-based
 classes and `TilemapMaterial`. Used internally to generate
@@ -243,21 +243,28 @@ during runtime or you'll risk leaking memory.
 
 | Type Parameter |
 | ------ |
-| `T` *extends* () => `Material` |
+| `TCtor` *extends* (`args`) => `Material` |
+| `TParam` *extends* `MaterialParameters` |
 
 #### Parameters
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `ctor` | `T` | The class to extend. |
+| `ctor` | `TCtor` | The class to extend. |
 
 #### Returns
 
 `Function`
 
+##### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `args` | `TParam` |
+
 ##### Returns
 
-[`TilemapMaterial`](TilemapMaterial.md) & `T`
+`TCtor` & [`TilemapMaterial`](TilemapMaterial.md)
 
 #### Defined in
 
@@ -290,4 +297,4 @@ TilemapMaterial's prototype.
 
 #### Defined in
 
-[src/TilemapMaterial.ts:373](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L373)
+[src/TilemapMaterial.ts:376](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L376)

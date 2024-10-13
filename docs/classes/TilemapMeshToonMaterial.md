@@ -20,13 +20,19 @@ materiial.tile({
 
 ## Extends
 
-- [`TilemapMaterial`](TilemapMaterial.md)\<`this`\> & *typeof* `MeshToonMaterial`
+- *typeof* `MeshToonMaterial` & [`TilemapMaterial`](TilemapMaterial.md)\<`this`\>
 
 ## Constructors
 
 ### new TilemapMeshToonMaterial()
 
-> **new TilemapMeshToonMaterial**(): [`TilemapMeshToonMaterial`](TilemapMeshToonMaterial.md)
+> **new TilemapMeshToonMaterial**(`args`): [`TilemapMeshToonMaterial`](TilemapMeshToonMaterial.md)
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `args` | `MeshToonMaterialParameters` |
 
 #### Returns
 
@@ -34,11 +40,14 @@ materiial.tile({
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshToonMaterial).constructor`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshToonMaterial,
+  THREE.MeshToonMaterialParameters
+>(THREE.MeshToonMaterial).constructor`
 
 #### Defined in
 
-[src/TilemapMaterial.ts:357](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L357)
+[src/TilemapMaterial.ts:360](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L360)
 
 ***
 
@@ -58,20 +67,23 @@ materiial.tile({
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshToonMaterial).constructor`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshToonMaterial,
+  THREE.MeshToonMaterialParameters
+>(THREE.MeshToonMaterial).constructor`
 
 #### Defined in
 
-[src/index.ts:216](https://github.com/riokoe/three-sprites/blob/main/src/index.ts#L216)
+[src/index.ts:249](https://github.com/riokoe/three-sprites/blob/main/src/index.ts#L249)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| `map?` | `public` | `null` \| `Texture` | The texture for the Tilemap. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).map` | [src/TilemapMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L124) |
-| `prototype` | `public` | `MeshToonMaterial` | - | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).prototype` |  |
-| `tiling?` | `public` | `Required`\<[`ITilemapTilingOptions`](../interfaces/ITilemapTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).tiling` | [src/TilemapMaterial.ts:146](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L146) |
-| `uniforms?` | `public` | [`ITilemapUniforms`](../interfaces/ITilemapUniforms.md) | Uniforms of the shader. May be set before shader compilation. `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { myCustomUniform: { value: 10 }, } mat.tile({ // ... });` | `TilemapMaterial.extendClass(THREE.MeshToonMaterial).uniforms` | [src/TilemapMaterial.ts:140](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L140) |
+| `map?` | `public` | `null` \| `Texture` | The texture for the Tilemap. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `TilemapMaterial.extendClass< typeof THREE.MeshToonMaterial, THREE.MeshToonMaterialParameters >(THREE.MeshToonMaterial).map` | [src/TilemapMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L124) |
+| `prototype` | `public` | `MeshToonMaterial` | - | `TilemapMaterial.extendClass< typeof THREE.MeshToonMaterial, THREE.MeshToonMaterialParameters >(THREE.MeshToonMaterial).prototype` |  |
+| `tiling?` | `public` | `Required`\<[`ITilemapTilingOptions`](../interfaces/ITilemapTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `TilemapMaterial.extendClass< typeof THREE.MeshToonMaterial, THREE.MeshToonMaterialParameters >(THREE.MeshToonMaterial).tiling` | [src/TilemapMaterial.ts:146](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L146) |
+| `uniforms?` | `public` | [`ITilemapUniforms`](../interfaces/ITilemapUniforms.md) | Uniforms of the shader. May be set before shader compilation. `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { myCustomUniform: { value: 10 }, } mat.tile({ // ... });` | `TilemapMaterial.extendClass< typeof THREE.MeshToonMaterial, THREE.MeshToonMaterialParameters >(THREE.MeshToonMaterial).uniforms` | [src/TilemapMaterial.ts:140](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L140) |
 
 ## Methods
 
@@ -100,7 +112,10 @@ customProgramCacheKey() {
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshToonMaterial).customProgramCacheKey`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshToonMaterial,
+  THREE.MeshToonMaterialParameters
+>(THREE.MeshToonMaterial).customProgramCacheKey`
 
 #### Defined in
 
@@ -127,7 +142,10 @@ shader program.
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshToonMaterial).injectShaderFragments`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshToonMaterial,
+  THREE.MeshToonMaterialParameters
+>(THREE.MeshToonMaterial).injectShaderFragments`
 
 #### Defined in
 
@@ -154,7 +172,10 @@ shader is (re-)compiled.
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshToonMaterial).mergeUniforms`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshToonMaterial,
+  THREE.MeshToonMaterialParameters
+>(THREE.MeshToonMaterial).mergeUniforms`
 
 #### Defined in
 
@@ -194,7 +215,10 @@ onBeforeCompile(shader) {
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshToonMaterial).onBeforeCompile`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshToonMaterial,
+  THREE.MeshToonMaterialParameters
+>(THREE.MeshToonMaterial).onBeforeCompile`
 
 #### Defined in
 
@@ -222,7 +246,10 @@ with Required<ITilemapTilingOptions<THREE.Vector2>> on
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshToonMaterial).setTilingOptions`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshToonMaterial,
+  THREE.MeshToonMaterialParameters
+>(THREE.MeshToonMaterial).setTilingOptions`
 
 #### Defined in
 
@@ -261,7 +288,10 @@ myScene.add(tilemap);
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshToonMaterial).tile`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshToonMaterial,
+  THREE.MeshToonMaterialParameters
+>(THREE.MeshToonMaterial).tile`
 
 #### Defined in
 

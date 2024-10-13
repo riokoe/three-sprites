@@ -20,13 +20,19 @@ materiial.tile({
 
 ## Extends
 
-- [`SpriteMaterial`](SpriteMaterial.md)\<`this`\> & *typeof* `MeshStandardMaterial`
+- *typeof* `MeshStandardMaterial` & [`SpriteMaterial`](SpriteMaterial.md)\<`this`\>
 
 ## Constructors
 
 ### new SpriteMeshStandardMaterial()
 
-> **new SpriteMeshStandardMaterial**(): [`SpriteMeshStandardMaterial`](SpriteMeshStandardMaterial.md)
+> **new SpriteMeshStandardMaterial**(`args`): [`SpriteMeshStandardMaterial`](SpriteMeshStandardMaterial.md)
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `args` | `MeshStandardMaterialParameters` |
 
 #### Returns
 
@@ -34,11 +40,14 @@ materiial.tile({
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshStandardMaterial).constructor`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshStandardMaterial,
+  THREE.MeshStandardMaterialParameters
+>(THREE.MeshStandardMaterial).constructor`
 
 #### Defined in
 
-[src/SpriteMaterial.ts:338](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L338)
+[src/SpriteMaterial.ts:341](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L341)
 
 ***
 
@@ -58,20 +67,23 @@ materiial.tile({
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshStandardMaterial).constructor`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshStandardMaterial,
+  THREE.MeshStandardMaterialParameters
+>(THREE.MeshStandardMaterial).constructor`
 
 #### Defined in
 
-[src/index.ts:63](https://github.com/riokoe/three-sprites/blob/main/src/index.ts#L63)
+[src/index.ts:69](https://github.com/riokoe/three-sprites/blob/main/src/index.ts#L69)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| `map?` | `public` | `null` \| `Texture` | The texture for the sprite. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `SpriteMaterial.extendClass(THREE.MeshStandardMaterial).map` | [src/SpriteMaterial.ts:101](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L101) |
-| `prototype` | `public` | `MeshStandardMaterial` | - | `SpriteMaterial.extendClass(THREE.MeshStandardMaterial).prototype` |  |
-| `tiling?` | `public` | `Required`\<[`ISpriteTilingOptions`](../interfaces/ISpriteTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `SpriteMaterial.extendClass(THREE.MeshStandardMaterial).tiling` | [src/SpriteMaterial.ts:130](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L130) |
-| `uniforms?` | `public` | [`ISpriteUniforms`](../interfaces/ISpriteUniforms.md) | Uniforms of the shader. May be set before shader compilation. Can be used to manipulate tile/tileset size/coordinates instead of calling `tile(options)`. Useful to bypass px -> UV calculations of `tile()` in case tiling data is already formatted as UVs: `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { tileSize: { value: new THREE.Vector2(0.5, 0.5) }, tileCoord: { value: new THREE.Vector2(0, 0.5) }, tileRepeat: { value: new THREE.Vector2(1, 1) }, } let n = 0; while (await new Promise(res => setTimeout(res, 100))) { mat.uniforms.tileCoord.value.set(0.5 * n, 0.5); n = Number(!n); }` | `SpriteMaterial.extendClass(THREE.MeshStandardMaterial).uniforms` | [src/SpriteMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L124) |
+| `map?` | `public` | `null` \| `Texture` | The texture for the sprite. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `SpriteMaterial.extendClass< typeof THREE.MeshStandardMaterial, THREE.MeshStandardMaterialParameters >(THREE.MeshStandardMaterial).map` | [src/SpriteMaterial.ts:101](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L101) |
+| `prototype` | `public` | `MeshStandardMaterial` | - | `SpriteMaterial.extendClass< typeof THREE.MeshStandardMaterial, THREE.MeshStandardMaterialParameters >(THREE.MeshStandardMaterial).prototype` |  |
+| `tiling?` | `public` | `Required`\<[`ISpriteTilingOptions`](../interfaces/ISpriteTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `SpriteMaterial.extendClass< typeof THREE.MeshStandardMaterial, THREE.MeshStandardMaterialParameters >(THREE.MeshStandardMaterial).tiling` | [src/SpriteMaterial.ts:130](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L130) |
+| `uniforms?` | `public` | [`ISpriteUniforms`](../interfaces/ISpriteUniforms.md) | Uniforms of the shader. May be set before shader compilation. Can be used to manipulate tile/tileset size/coordinates instead of calling `tile(options)`. Useful to bypass px -> UV calculations of `tile()` in case tiling data is already formatted as UVs: `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { tileSize: { value: new THREE.Vector2(0.5, 0.5) }, tileCoord: { value: new THREE.Vector2(0, 0.5) }, tileRepeat: { value: new THREE.Vector2(1, 1) }, } let n = 0; while (await new Promise(res => setTimeout(res, 100))) { mat.uniforms.tileCoord.value.set(0.5 * n, 0.5); n = Number(!n); }` | `SpriteMaterial.extendClass< typeof THREE.MeshStandardMaterial, THREE.MeshStandardMaterialParameters >(THREE.MeshStandardMaterial).uniforms` | [src/SpriteMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L124) |
 
 ## Methods
 
@@ -100,7 +112,10 @@ customProgramCacheKey() {
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshStandardMaterial).customProgramCacheKey`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshStandardMaterial,
+  THREE.MeshStandardMaterialParameters
+>(THREE.MeshStandardMaterial).customProgramCacheKey`
 
 #### Defined in
 
@@ -127,7 +142,10 @@ shader program.
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshStandardMaterial).injectShaderFragments`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshStandardMaterial,
+  THREE.MeshStandardMaterialParameters
+>(THREE.MeshStandardMaterial).injectShaderFragments`
 
 #### Defined in
 
@@ -154,7 +172,10 @@ shader is (re-)compiled.
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshStandardMaterial).mergeUniforms`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshStandardMaterial,
+  THREE.MeshStandardMaterialParameters
+>(THREE.MeshStandardMaterial).mergeUniforms`
 
 #### Defined in
 
@@ -194,7 +215,10 @@ onBeforeCompile(shader) {
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshStandardMaterial).onBeforeCompile`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshStandardMaterial,
+  THREE.MeshStandardMaterialParameters
+>(THREE.MeshStandardMaterial).onBeforeCompile`
 
 #### Defined in
 
@@ -222,7 +246,10 @@ with Required<ISpriteTilingOptions<THREE.Vector2>> on
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshStandardMaterial).setTilingOptions`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshStandardMaterial,
+  THREE.MeshStandardMaterialParameters
+>(THREE.MeshStandardMaterial).setTilingOptions`
 
 #### Defined in
 
@@ -261,7 +288,10 @@ myScene.add(sprite);
 
 #### Inherited from
 
-`SpriteMaterial.extendClass(THREE.MeshStandardMaterial).tile`
+`SpriteMaterial.extendClass<
+  typeof THREE.MeshStandardMaterial,
+  THREE.MeshStandardMaterialParameters
+>(THREE.MeshStandardMaterial).tile`
 
 #### Defined in
 

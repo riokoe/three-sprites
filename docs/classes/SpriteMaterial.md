@@ -231,7 +231,7 @@ myScene.add(sprite);
 
 ### extendClass()
 
-> `static` **extendClass**\<`T`\>(`ctor`): () => [`SpriteMaterial`](SpriteMaterial.md) & `T`
+> `static` **extendClass**\<`TCtor`, `TParam`\>(`ctor`): (`args`) => `TCtor` & [`SpriteMaterial`](SpriteMaterial.md)
 
 Static method to create mixins of `THREE.Material`-based
 classes and `SpriteMaterial`. Used internally to generate
@@ -243,21 +243,28 @@ during runtime or you'll risk leaking memory.
 
 | Type Parameter |
 | ------ |
-| `T` *extends* () => `Material` |
+| `TCtor` *extends* (`args`) => `Material` |
+| `TParam` *extends* `MaterialParameters` |
 
 #### Parameters
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `ctor` | `T` | The class to extend. |
+| `ctor` | `TCtor` | The class to extend. |
 
 #### Returns
 
 `Function`
 
+##### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `args` | `TParam` |
+
 ##### Returns
 
-[`SpriteMaterial`](SpriteMaterial.md) & `T`
+`TCtor` & [`SpriteMaterial`](SpriteMaterial.md)
 
 #### Defined in
 
@@ -290,4 +297,4 @@ Static method to extend instanciated materials by
 
 #### Defined in
 
-[src/SpriteMaterial.ts:354](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L354)
+[src/SpriteMaterial.ts:357](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L357)

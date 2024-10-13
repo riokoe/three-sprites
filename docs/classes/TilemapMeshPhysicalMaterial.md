@@ -20,13 +20,19 @@ materiial.tile({
 
 ## Extends
 
-- [`TilemapMaterial`](TilemapMaterial.md)\<`this`\> & *typeof* `MeshPhysicalMaterial`
+- *typeof* `MeshPhysicalMaterial` & [`TilemapMaterial`](TilemapMaterial.md)\<`this`\>
 
 ## Constructors
 
 ### new TilemapMeshPhysicalMaterial()
 
-> **new TilemapMeshPhysicalMaterial**(): [`TilemapMeshPhysicalMaterial`](TilemapMeshPhysicalMaterial.md)
+> **new TilemapMeshPhysicalMaterial**(`args`): [`TilemapMeshPhysicalMaterial`](TilemapMeshPhysicalMaterial.md)
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `args` | `MeshPhysicalMaterialParameters` |
 
 #### Returns
 
@@ -34,11 +40,14 @@ materiial.tile({
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).constructor`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshPhysicalMaterial,
+  THREE.MeshPhysicalMaterialParameters
+>(THREE.MeshPhysicalMaterial).constructor`
 
 #### Defined in
 
-[src/TilemapMaterial.ts:357](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L357)
+[src/TilemapMaterial.ts:360](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L360)
 
 ***
 
@@ -58,20 +67,23 @@ materiial.tile({
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).constructor`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshPhysicalMaterial,
+  THREE.MeshPhysicalMaterialParameters
+>(THREE.MeshPhysicalMaterial).constructor`
 
 #### Defined in
 
-[src/index.ts:182](https://github.com/riokoe/three-sprites/blob/main/src/index.ts#L182)
+[src/index.ts:209](https://github.com/riokoe/three-sprites/blob/main/src/index.ts#L209)
 
 ## Properties
 
 | Property | Modifier | Type | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| `map?` | `public` | `null` \| `Texture` | The texture for the Tilemap. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).map` | [src/TilemapMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L124) |
-| `prototype` | `public` | `MeshPhysicalMaterial` | - | `TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).prototype` |  |
-| `tiling?` | `public` | `Required`\<[`ITilemapTilingOptions`](../interfaces/ITilemapTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).tiling` | [src/TilemapMaterial.ts:146](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L146) |
-| `uniforms?` | `public` | [`ITilemapUniforms`](../interfaces/ITilemapUniforms.md) | Uniforms of the shader. May be set before shader compilation. `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { myCustomUniform: { value: 10 }, } mat.tile({ // ... });` | `TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).uniforms` | [src/TilemapMaterial.ts:140](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L140) |
+| `map?` | `public` | `null` \| `Texture` | The texture for the Tilemap. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `TilemapMaterial.extendClass< typeof THREE.MeshPhysicalMaterial, THREE.MeshPhysicalMaterialParameters >(THREE.MeshPhysicalMaterial).map` | [src/TilemapMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L124) |
+| `prototype` | `public` | `MeshPhysicalMaterial` | - | `TilemapMaterial.extendClass< typeof THREE.MeshPhysicalMaterial, THREE.MeshPhysicalMaterialParameters >(THREE.MeshPhysicalMaterial).prototype` |  |
+| `tiling?` | `public` | `Required`\<[`ITilemapTilingOptions`](../interfaces/ITilemapTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `TilemapMaterial.extendClass< typeof THREE.MeshPhysicalMaterial, THREE.MeshPhysicalMaterialParameters >(THREE.MeshPhysicalMaterial).tiling` | [src/TilemapMaterial.ts:146](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L146) |
+| `uniforms?` | `public` | [`ITilemapUniforms`](../interfaces/ITilemapUniforms.md) | Uniforms of the shader. May be set before shader compilation. `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { myCustomUniform: { value: 10 }, } mat.tile({ // ... });` | `TilemapMaterial.extendClass< typeof THREE.MeshPhysicalMaterial, THREE.MeshPhysicalMaterialParameters >(THREE.MeshPhysicalMaterial).uniforms` | [src/TilemapMaterial.ts:140](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L140) |
 
 ## Methods
 
@@ -100,7 +112,10 @@ customProgramCacheKey() {
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).customProgramCacheKey`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshPhysicalMaterial,
+  THREE.MeshPhysicalMaterialParameters
+>(THREE.MeshPhysicalMaterial).customProgramCacheKey`
 
 #### Defined in
 
@@ -127,7 +142,10 @@ shader program.
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).injectShaderFragments`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshPhysicalMaterial,
+  THREE.MeshPhysicalMaterialParameters
+>(THREE.MeshPhysicalMaterial).injectShaderFragments`
 
 #### Defined in
 
@@ -154,7 +172,10 @@ shader is (re-)compiled.
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).mergeUniforms`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshPhysicalMaterial,
+  THREE.MeshPhysicalMaterialParameters
+>(THREE.MeshPhysicalMaterial).mergeUniforms`
 
 #### Defined in
 
@@ -194,7 +215,10 @@ onBeforeCompile(shader) {
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).onBeforeCompile`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshPhysicalMaterial,
+  THREE.MeshPhysicalMaterialParameters
+>(THREE.MeshPhysicalMaterial).onBeforeCompile`
 
 #### Defined in
 
@@ -222,7 +246,10 @@ with Required<ITilemapTilingOptions<THREE.Vector2>> on
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).setTilingOptions`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshPhysicalMaterial,
+  THREE.MeshPhysicalMaterialParameters
+>(THREE.MeshPhysicalMaterial).setTilingOptions`
 
 #### Defined in
 
@@ -261,7 +288,10 @@ myScene.add(tilemap);
 
 #### Inherited from
 
-`TilemapMaterial.extendClass(THREE.MeshPhysicalMaterial).tile`
+`TilemapMaterial.extendClass<
+  typeof THREE.MeshPhysicalMaterial,
+  THREE.MeshPhysicalMaterialParameters
+>(THREE.MeshPhysicalMaterial).tile`
 
 #### Defined in
 
