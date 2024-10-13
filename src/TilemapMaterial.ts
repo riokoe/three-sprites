@@ -220,7 +220,7 @@ export abstract class TilemapMaterial extends THREE.Material {
    * @returns {string}
    */
   public customProgramCacheKey(): string {
-    return `tilemap-${this.type}`;
+    return `tilemap-${this.type}-${String(this.uniforms?.tiles?.value.length ?? this.tiling?.tiles.length ?? 0)}`;
   }
 
   /**
@@ -257,9 +257,6 @@ export abstract class TilemapMaterial extends THREE.Material {
    * @returns {void}
    */
   injectShaderFragments(shader: THREE.WebGLProgramParametersWithUniforms): void {
-    if (!this.map)
-      return;
-
     this.mergeUniforms(shader);
     if (this.tiling)
       this.tile(this.tiling);

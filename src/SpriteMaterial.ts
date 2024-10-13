@@ -245,9 +245,6 @@ export abstract class SpriteMaterial extends THREE.Material {
    * @returns {void}
    */
   protected injectShaderFragments(shader: THREE.WebGLProgramParametersWithUniforms): void {
-    if (!this.map)
-      return;
-
     this.mergeUniforms(shader);
     if (this.tiling)
       this.tile(this.tiling);
