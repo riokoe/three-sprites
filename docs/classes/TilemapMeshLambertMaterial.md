@@ -47,7 +47,7 @@ materiial.tile({
 
 #### Defined in
 
-[src/TilemapMaterial.ts:360](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L360)
+[src/TilemapMaterial.ts:357](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L357)
 
 ***
 
@@ -179,7 +179,7 @@ shader is (re-)compiled.
 
 #### Defined in
 
-[src/TilemapMaterial.ts:315](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L315)
+[src/TilemapMaterial.ts:312](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L312)
 
 ***
 
@@ -253,7 +253,7 @@ with Required<ITilemapTilingOptions<THREE.Vector2>> on
 
 #### Defined in
 
-[src/TilemapMaterial.ts:285](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L285)
+[src/TilemapMaterial.ts:282](https://github.com/riokoe/three-sprites/blob/main/src/TilemapMaterial.ts#L282)
 
 ***
 

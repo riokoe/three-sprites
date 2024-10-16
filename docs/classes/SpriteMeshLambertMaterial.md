@@ -47,7 +47,7 @@ materiial.tile({
 
 #### Defined in
 
-[src/SpriteMaterial.ts:341](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L341)
+[src/SpriteMaterial.ts:338](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L338)
 
 ***
 
@@ -83,7 +83,7 @@ materiial.tile({
 | `map?` | `public` | `null` \| `Texture` | The texture for the sprite. https://threejs.org/docs/?q=basicmat#api/en/materials/MeshBasicMaterial.map | `SpriteMaterial.extendClass< typeof THREE.MeshLambertMaterial, THREE.MeshLambertMaterialParameters >(THREE.MeshLambertMaterial).map` | [src/SpriteMaterial.ts:101](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L101) |
 | `prototype` | `public` | `MeshLambertMaterial` | - | `SpriteMaterial.extendClass< typeof THREE.MeshLambertMaterial, THREE.MeshLambertMaterialParameters >(THREE.MeshLambertMaterial).prototype` |  |
 | `tiling?` | `public` | `Required`\<[`ISpriteTilingOptions`](../interfaces/ISpriteTilingOptions.md)\<`Vector2`\>\> | The tiling options set via `.tile()`. Manipulating them directly takes no effect until `.tile()` is called again. | `SpriteMaterial.extendClass< typeof THREE.MeshLambertMaterial, THREE.MeshLambertMaterialParameters >(THREE.MeshLambertMaterial).tiling` | [src/SpriteMaterial.ts:130](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L130) |
-| `uniforms?` | `public` | [`ISpriteUniforms`](../interfaces/ISpriteUniforms.md) | Uniforms of the shader. May be set before shader compilation. Can be used to manipulate tile/tileset size/coordinates instead of calling `tile(options)`. Useful to bypass px -> UV calculations of `tile()` in case tiling data is already formatted as UVs: `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { tileSize: { value: new THREE.Vector2(0.5, 0.5) }, tileCoord: { value: new THREE.Vector2(0, 0.5) }, tileRepeat: { value: new THREE.Vector2(1, 1) }, } let n = 0; while (await new Promise(res => setTimeout(res, 100))) { mat.uniforms.tileCoord.value.set(0.5 * n, 0.5); n = Number(!n); }` | `SpriteMaterial.extendClass< typeof THREE.MeshLambertMaterial, THREE.MeshLambertMaterialParameters >(THREE.MeshLambertMaterial).uniforms` | [src/SpriteMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L124) |
+| `uniforms?` | `public` | [`ISpriteUniforms`](../interfaces/ISpriteUniforms.md) | Uniforms of the shader. May be set before shader compilation. Can be used to manipulate tile/tileset size/coordinates instead of calling `tile(options)`. Useful to bypass px -> UV calculations of `tile()` in case tiling data is already formatted as UVs: `const mat = new SpriteMaterial({ map: myTexture }); mat.uniforms = { tileSize: { value: new THREE.Vector2(0.5, 0.5) }, tileCoord: { value: new THREE.Vector2(0, 0.5) }, tileFactor: { value: new THREE.Vector2(1, 1) }, } let n = 0; while (await new Promise(res => setTimeout(res, 100))) { mat.uniforms.tileCoord.value.set(0.5 * n, 0.5); n = Number(!n); }` | `SpriteMaterial.extendClass< typeof THREE.MeshLambertMaterial, THREE.MeshLambertMaterialParameters >(THREE.MeshLambertMaterial).uniforms` | [src/SpriteMaterial.ts:124](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L124) |
 
 ## Methods
 
@@ -179,7 +179,7 @@ shader is (re-)compiled.
 
 #### Defined in
 
-[src/SpriteMaterial.ts:311](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L311)
+[src/SpriteMaterial.ts:308](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L308)
 
 ***
 
@@ -253,7 +253,7 @@ with Required<ISpriteTilingOptions<THREE.Vector2>> on
 
 #### Defined in
 
-[src/SpriteMaterial.ts:273](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L273)
+[src/SpriteMaterial.ts:270](https://github.com/riokoe/three-sprites/blob/main/src/SpriteMaterial.ts#L270)
 
 ***
 

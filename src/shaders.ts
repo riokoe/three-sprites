@@ -9,7 +9,7 @@ const spriteShader = {
   uniforms: (): string => (`
     uniform vec2 tileSize;
     uniform vec2 tileCoord;
-    uniform vec2 tileRepeat;
+    uniform vec2 tileFactor;
   `),
 
   /**
@@ -17,9 +17,9 @@ const spriteShader = {
    */
   frag: (): string => (`
     #ifdef USE_MAP
-      vec4 sampledDiffuseColor = texture(
+      vec4 sampledDiffuseColor = texture2D(
         map,
-        mod(vMapUv * tileSize * tileRepeat, tileSize) + tileCoord
+        min(tileSize - 0.000001, fract(clamp(vMapUv, 0.0, 1.0) / tileFactor) * tileSize) + tileCoord
       );
       #ifdef DECODE_VIDEO_TEXTURE
         sampledDiffuseColor = vec4( mix( pow( sampledDiffuseColor.rgb * 0.9478672986 + vec3( 0.0521327014 ), vec3( 2.4 ) ), sampledDiffuseColor.rgb * 0.0773993808, vec3( lessThanEqual( sampledDiffuseColor.rgb, vec3( 0.04045 ) ) ) ), sampledDiffuseColor.w );
@@ -60,11 +60,12 @@ const mapShader = {
     #ifdef USE_MAP
       int tilesPerLayer = int(tileRepeat.x * tileRepeat.y);
       int layers = int(ceil(float(tiles.length()) / float(tilesPerLayer)));
+      vec2 clampedUv = clamp(vMapUv, 0.0, 1.0);
       vec4 sampledDiffuseColor = vec4(0.0);
       for (int i = 0; i < layers; i++) {
-        float tile = tiles[tilesPerLayer * i + int(floor(vMapUv.x * tileRepeat.x) + floor((1.0 - vMapUv.y) * tileRepeat.y) * tileRepeat.x)];
+        float tile = tiles[tilesPerLayer * i + int(floor(clampedUv.x * tileRepeat.x) + floor((1.0 - clampedUv.y) * tileRepeat.y) * tileRepeat.x)];
         vec2 tileCoord = vec2(mod(tile, tileCount.x) * tileSize.x, 1.0 - tileSize.y * (1.0 + floor(tile / tileCount.x)));
-        vec4 layerColor = texture(map, mod(vMapUv * tileFactor, tileSize) * (1.0 - tileSpacing / tileSize) + tileCoord + tileSpacing / 2.0);
+        vec4 layerColor = texture2D(map, min(tileSize - 0.000001, fract(clampedUv / tileFactor) * tileSize) * (1.0 - tileSpacing / tileSize) + tileCoord + tileSpacing / 2.0);
         sampledDiffuseColor = mix(
           sampledDiffuseColor,
           layerColor,

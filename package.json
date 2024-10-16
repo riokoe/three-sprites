@@ -1,6 +1,6 @@
 {
   "name": "three-sprites",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "A library for THREE.JS to render and animate spritesheet-based tilemaps and sprites.",
   "homepage": "https://github.com/riokoe/three-sprites",
   "repository": "github:riokoe/three-sprites",

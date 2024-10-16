@@ -188,8 +188,8 @@ export abstract class TilemapMaterial extends THREE.Material {
       this.tiling.tilesetSize.y / this.tiling.tileSize.y
     );
     this.uniforms.tileFactor?.value.set(
-      this.tiling.tileSize.x / this.tiling.tilesetSize.x * this.tiling.repeat.x,
-      this.tiling.tileSize.y / this.tiling.tilesetSize.y * this.tiling.repeat.y
+      1 / Math.max(1, this.tiling.repeat.x),
+      1 / Math.max(1, this.tiling.repeat.y)
     );
     this.uniforms.tileRepeat?.value.set(
       Math.max(1, this.tiling.repeat.x),

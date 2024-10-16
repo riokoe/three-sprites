@@ -22,7 +22,7 @@ export interface ISpriteUniforms {
    * Amount of times to repeat the tile:
    * `{ x: 2, y: 2 }`
    */
-  tileRepeat?: THREE.Uniform<THREE.Vector2>;
+  tileFactor?: THREE.Uniform<THREE.Vector2>;
 
   /**
    * Rest of uniforms inherited from the super class
@@ -112,7 +112,7 @@ export abstract class SpriteMaterial extends THREE.Material {
    * mat.uniforms = {
    *   tileSize: { value: new THREE.Vector2(0.5, 0.5) },
    *   tileCoord: { value: new THREE.Vector2(0, 0.5) },
-   *   tileRepeat: { value: new THREE.Vector2(1, 1) },
+   *   tileFactor: { value: new THREE.Vector2(1, 1) },
    * }
    * let n = 0;
    * while (await new Promise(res => setTimeout(res, 100))) {
@@ -183,9 +183,9 @@ export abstract class SpriteMaterial extends THREE.Material {
       tileSizeX - tilePadX,
       tileSizeY - tilePadY
     );
-    this.uniforms.tileRepeat?.value.set(
-      Math.max(1, this.tiling.repeat.x),
-      Math.max(1, this.tiling.repeat.y)
+    this.uniforms.tileFactor?.value.set(
+      1 / Math.max(1, this.tiling.repeat.x),
+      1 / Math.max(1, this.tiling.repeat.y)
     );
   }
 
@@ -318,8 +318,8 @@ export abstract class SpriteMaterial extends THREE.Material {
       this.uniforms.tileCoord = new THREE.Uniform(new THREE.Vector2(0));
     if (!this.uniforms.tileSize)
       this.uniforms.tileSize = new THREE.Uniform(new THREE.Vector2(0));
-    if (!this.uniforms.tileRepeat)
-      this.uniforms.tileRepeat = new THREE.Uniform(new THREE.Vector2(1));
+    if (!this.uniforms.tileFactor)
+      this.uniforms.tileFactor = new THREE.Uniform(new THREE.Vector2(1));
   }
 
   /**
